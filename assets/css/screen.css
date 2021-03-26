@@ -143,10 +143,15 @@ html,
 
 .gh-card-image {
     width: 70%;
-    object-fit: cover;
-    margin-bottom: 4vmin;
     margin-left: auto;
     margin-right: auto;
+    display: block;
+}
+
+.gh-card-image__image {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 4vmin;
     /*Rounded Corners*/
     -moz-border-radius:10px;
     -webkit-border-radius:10px;

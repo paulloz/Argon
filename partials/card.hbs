@@ -21,7 +21,9 @@ Re-usable card for linking to posts
             <span class="gh-card-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> <span class="bull">&bull;</span> {{reading_time}}</span>
             <h2 class="gh-card-title"><a href="{{{url}}}">{{title}}</a></h2>
             <p>{{excerpt}}</p>
-            <strong><a class="readmore" href="{{{url}}}">Lire la suite</a></strong>
+            <a class="readmore" href="{{{url}}}">
+                {{> "icons/arrow-right"}} Lire la suite
+            </span>
         </div>
 
 </article>

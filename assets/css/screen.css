@@ -192,25 +192,14 @@ html,
 }
 
 .readmore {
-    background:transparent;
-    border: 1px solid;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 18px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.readmore svg {
     display: inline-block;
-    outline: none;
-    position: relative;
-    top: 0;
-    box-shadow: 0 -1px 0 0 inset currentColor;
-    opacity: 0.5;
-    border-radius: 20em;
-    -webkit-transition: all 0.2s ease-in-out 0s;
-    -moz-transition: all 0.2s ease-in-out 0s;
-    -ms-transition: all 0.2s ease-in-out 0s;
-    transition: all 0.2s ease-in-out 0s;
+    vertical-align: sub;
+    height: 1em;
 }
 
 /* Page

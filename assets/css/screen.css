@@ -9,6 +9,7 @@ production stylesheet in assets/built/screen.css using: gulp dev
 /* ---------------------------------------------------------- */
 
 /* Base components */
+@import "fonts.css";
 @import "vars.css";
 @import "components/global.css";
 @import "components/forms.css";
@@ -74,7 +75,6 @@ html,
     height: 2rem;
 }
 
-
 /* Brand
 /* ---------------------------------------------------------- */
 
@@ -83,7 +83,7 @@ html,
 }
 
 .gh-head-logo img {
-    max-height: 50px;
+    max-height: 100px;
 }
 
 
@@ -99,21 +99,69 @@ html,
     flex-direction: column;
 }
 
+.gh-card-title a {
+    color: #454545;
+    text-decoration: none;
+  }
+
+.gh-card-title a:hover {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+.gh-card-primary-tag {
+  color: #454545;
+  text-decoration: none;
+    display: block;
+    margin: 0 0 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.2em;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    opacity: .5;
+    background:transparent;
+    border: 1px solid inset currentColor;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 18px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    position: relative;
+    top: 0;
+    opacity: 0.5;
+    border-radius: 20em;
+}
+
+.gh-card-primary-tag a:hover {
+  color: currentColor;
+  text-decoration: none;
+}
+
 .gh-card-image {
-    width: 100%;
-    max-height: 700px;
+    width: 70%;
     object-fit: cover;
     margin-bottom: 4vmin;
+    margin-left: auto;
+    margin-right: auto;
+    /*Rounded Corners*/
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
 }
 
 .gh-card-meta {
     display: block;
     margin: 0 0 1rem;
     font-size: 1.4rem;
+    font-weight: 600;
     line-height: 1.2em;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: .5;
 }
 
 .gh-card-content {
@@ -121,10 +169,15 @@ html,
     margin: 0 auto;
     text-align: center;
     font-size: 1.6rem;
+    font-weight: 600;
 }
 
 .gh-card-content p {
-    margin: 1.2rem 0;
+    font-family: Georgia,Times,serif;
+    font-weight: 400;
+    font-size: 1.9rem;
+    line-height: 1.6em;
+    margin: 1.6rem 0;
     padding: 0 6vmin;
 }
 
@@ -132,10 +185,29 @@ html,
     display: inline-block;
     padding: 1px 0;
     font-weight: 500;
-    box-shadow: 0 -1px 0 0 inset currentColor;
-    opacity: 0.5;
 }
 
+.readmore {
+    background:transparent;
+    border: 1px solid;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 18px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    position: relative;
+    top: 0;
+    box-shadow: 0 -1px 0 0 inset currentColor;
+    opacity: 0.5;
+    border-radius: 20em;
+    -webkit-transition: all 0.2s ease-in-out 0s;
+    -moz-transition: all 0.2s ease-in-out 0s;
+    -ms-transition: all 0.2s ease-in-out 0s;
+    transition: all 0.2s ease-in-out 0s;
+}
 
 /* Page
 /* ---------------------------------------------------------- */
@@ -178,9 +250,10 @@ html,
     display: block;
     margin: 0 0 1rem;
     font-size: 1.4rem;
+    font-weight: 600;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: .5;
 }
 
 .gh-excerpt {

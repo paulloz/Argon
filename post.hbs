@@ -24,7 +24,11 @@
     <footer class="gh-footer gh-canvas">
 
         <div class="gh-post-authors">
-            Written by {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+            <br>Par {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
+        </div>
+
+        <div class="gh-post-tags">
+          <br>{{tags}}
         </div>
 
         {{!--

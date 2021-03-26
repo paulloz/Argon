@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Nunito';
+    font-weight: 400;
+    src: url("/assets/built/fonts/Nunito-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Nunito';
+    font-weight: 600;
+    src: url("/assets/built/fonts/Nunito-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'Nunito';
+    font-weight: 700;
+    src: url("/assets/built/fonts/Nunito-Bold.ttf") format("truetype");
+}

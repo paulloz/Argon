@@ -1,3 +1,5 @@
+const fs = require('fs');
+const {exec} = require('child_process');
 const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
 
@@ -32,6 +34,14 @@ const handleError = (done) => {
 function hbs(done) {
     pump([
         src(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs']),
+        livereload()
+    ], handleError(done));
+}
+
+function fonts(done) {
+    pump([
+        src('assets/fonts/*.ttf'),
+        dest('assets/built/fonts/'),
         livereload()
     ], handleError(done));
 }
@@ -81,9 +91,25 @@ function zipper(done) {
 const cssWatcher = () => watch('assets/css/**', css);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
+const build = series(fonts, css, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;
 exports.zip = series(build, zipper);
+exports.fonts = (done) => {
+    const dir = fs.mkdtempSync("nunito-");
+    if (dir) {
+        exec(`git clone https://github.com/googlefonts/nunito.git ${dir}`, (error) => {
+            if (error == null) {
+                const fonts = ['Bold', 'Regular', 'SemiBold'];
+                for (let font of fonts) {
+                    fs.copyFileSync(`${dir}/fonts/TTF/Nunito-${font}.ttf`,
+                                    `assets/fonts/Nunito-${font}.ttf`);
+                }
+                done();
+            }
+            fs.rmSync(dir, { force: true, recursive: true });
+        });
+    }
+}
 exports.default = dev;

@@ -109,38 +109,6 @@ html,
     text-decoration: none;
   }
 
-.gh-card-primary-tag {
-  color: #454545;
-  text-decoration: none;
-    display: block;
-    margin: 0 0 1rem;
-    font-size: 1.3rem;
-    font-weight: 600;
-    line-height: 1.2em;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    opacity: .5;
-    background:transparent;
-    border: 1px solid inset currentColor;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin: 18px;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    outline: none;
-    position: relative;
-    top: 0;
-    opacity: 0.5;
-    border-radius: 20em;
-}
-
-.gh-card-primary-tag a:hover {
-  color: currentColor;
-  text-decoration: none;
-}
-
 .gh-card-image {
     width: 70%;
     margin-left: auto;
@@ -152,9 +120,6 @@ html,
     width: 100%;
     object-fit: cover;
     margin-bottom: 4vmin;
-    /*Rounded Corners*/
-    -moz-border-radius:10px;
-    -webkit-border-radius:10px;
     border-radius:10px;
 }
 
@@ -167,6 +132,12 @@ html,
     letter-spacing: 0.5px;
     text-transform: uppercase;
     opacity: .5;
+}
+
+.gh-card-meta a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 0 currentcolor;
 }
 
 .gh-card-content {
@@ -200,6 +171,13 @@ html,
     display: inline-block;
     vertical-align: sub;
     height: 1em;
+}
+
+@media (max-width: 1030px) {
+    .gh-card-image {
+        width: 100%;
+        max-width: 720px;
+    }
 }
 
 /* Page

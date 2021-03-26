@@ -69,10 +69,16 @@
 .gh-head-menu .nav a {
     display: inline-block;
     padding: 5px 0;
+    font-family: var(--font-sans-serif);
+    text-transform: uppercase;
+}
+
+.gh-head-menu .nav a:hover {
+    color: var(--color-primary);
 }
 
 .gh-head-menu .nav-current a {
-    box-shadow: 0 -1px 0 0 currentcolor inset;
+    box-shadow: 0 -2px 0 0 currentColor inset;
 }
 
 

@@ -120,7 +120,7 @@ html,
     width: 100%;
     object-fit: cover;
     margin-bottom: 4vmin;
-    border-radius:10px;
+    border-radius: 10px;
 }
 
 .gh-card-meta {
@@ -140,6 +140,10 @@ html,
     box-shadow: inset 0 -1px 0 0 currentcolor;
 }
 
+.gh-card-meta a:hover {
+    box-shadow: inset 0 -2px 0 0 currentcolor;
+}
+
 .gh-card-content {
     max-width: 720px;
     margin: 0 auto;
@@ -149,7 +153,7 @@ html,
 }
 
 .gh-card-content p {
-    font-family: Georgia,Times,serif;
+    font-family: var(--font-serif);
     font-weight: 400;
     font-size: 1.9rem;
     line-height: 1.6em;
@@ -227,6 +231,16 @@ html,
     opacity: .5;
 }
 
+.gh-post-meta a {
+    color: inherit;
+    text-decoration: none;
+    box-shadow: inset 0 -1px 0 0 currentcolor;
+}
+
+.gh-post-meta a:hover {
+    box-shadow: inset 0 -2px 0 0 currentcolor;
+}
+
 .gh-excerpt {
     margin: 1rem 0 0 0;
 }
@@ -237,10 +251,20 @@ html,
     margin: 8vmin 0 0;
 }
 
+.gh-feature-image,
+.kg-image-card img,
+.kg-gallery-card img {
+    border-radius: 10px;
+}
+
+.kg-image-card.kg-width-full img {
+    border-radius: unset;
+    width: 100%;
+}
+
 .gh-post-footer {
     margin: 2rem 0;
 }
-
 
 /* Author Archive
 /* ---------------------------------------------------------- */

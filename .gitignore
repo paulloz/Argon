@@ -24,3 +24,4 @@ projectFilesBackup
 dist/
 assets/built/
 *.ttf
+partials/icons/*.hbs

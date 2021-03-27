@@ -3,15 +3,15 @@
   display: grid;
   grid-template-columns:
     [full-start]
-      minmax(calc(calc(100% - 1200px) / 2), 1fr)
-        [wide-start]
-          auto
-            [main-start]
-              720px
-            [main-end]
-          auto
-        [wide-start]
-      minmax(calc(calc(100% - 1200px) / 2), 1fr)
+    minmax(calc(calc(100% - 1200px) / 2), 1fr)
+      [wide-start]
+        auto
+          [main-start]
+            720px
+          [main-end]
+        auto
+      [wide-end]
+    minmax(calc(calc(100% - 1200px) / 2), 1fr)
     [full-end]
   ;
 

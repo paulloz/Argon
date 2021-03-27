@@ -1,4 +1,6 @@
 
+@import "../../../node_modules/css.gg/icons/scss/chevron-right.scss";
+
 @import "../colors.scss";
 @import "../fonts.scss";
 
@@ -63,12 +65,14 @@
 
     .readmore {
       font-weight: 700;
-      font-size: 2rem;      
-
-      svg {
+      font-size: 2rem;
+  
+      i {
         display: inline-block;
-        vertical-align: sub;
-        height: 1em;
+        vertical-align: top;
+        color: inherit;
+        margin-left: -.6rem;
+        --ggs: 1.2;
       }
     }
   }

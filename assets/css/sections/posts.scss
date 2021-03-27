@@ -1,4 +1,7 @@
 
+@import "../../../node_modules/css.gg/icons/scss/chevron-left.scss";
+@import "../../../node_modules/css.gg/icons/scss/chevron-right.scss";
+
 .gh-article {
   .gh {
     &-header {
@@ -49,21 +52,21 @@
     font-size: inherit;    
   }
 
-  svg {
-    height: 1em;
+  i {
+    --ggs: 2;
     margin: auto;
   }
 
-  svg + h4,
-  h4 + svg {
+  i + h4,
+  h4 + i {
     margin-left: 2vmin;
   }
 
   @media(max-width: 700px) {
     font-size: 1.6rem;
 
-    svg {
-      margin: 0.1em 0 0;
-    }
+    // svg {
+    //   margin: 0.1em 0 0;
+    // }
   }
 }

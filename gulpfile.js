@@ -5,10 +5,8 @@ const glob = require('glob');
 const pump = require('pump');
 
 const beeper = require('beeper');
-const del = require('del');
 const filter = require('gulp-filter');
 const livereload = require('gulp-livereload');
-const rename = require('gulp-rename');
 
 const uglify = require('gulp-uglify');
 
@@ -33,30 +31,6 @@ const handleError = (done) => {
         return done(err);
     };
 };
-
-function icons(done) {
-    const re = RegExp(/\{\{>\s*(['"])icons\/(.*?)\1\}\}/, 'gm');
-
-    del('partials/icons/*.hbs');
-
-    glob('{,partials/**/}*.hbs', (err, files) => {
-        const icons = [];
-        for (const file of files) {
-            if (file.startsWith('partials/icons')) { continue; }
-            let match;
-            while ((match = re.exec(fs.readFileSync(file, 'utf8'))) != null) {
-                if (icons.indexOf(match[2]) < 0) {
-                    icons.push(match[2]);
-                }
-            }
-        }
-        pump([
-            src(icons.map(iconName => `node_modules/feather-icons/dist/icons/${iconName}.svg`)),
-            rename({ extname: ".hbs" }),
-            dest('partials/icons/')
-        ], handleError(done));
-    });
-}
 
 function hbs(done) {
     pump([
@@ -110,12 +84,9 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch('assets/css/**', css);
-const fullHbs = series(icons, hbs);
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs',
-                                '!partials/icons/*.hbs',
-                                '!node_modules/**/*.hbs'], fullHbs);
+const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
 const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(icons, fonts, css, js);
+const build = series(fonts, css, js);
 const dev = series(build, serve, watcher);
 
 exports.build = build;

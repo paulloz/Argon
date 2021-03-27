@@ -65,8 +65,13 @@
   @media(max-width: 700px) {
     font-size: 1.6rem;
 
-    // svg {
-    //   margin: 0.1em 0 0;
-    // }
+    i {
+      --ggs: 1.4;
+    }
+
+    i + h4,
+    h4 + i {
+      margin-left: 4vmin;
+    }
   }
 }

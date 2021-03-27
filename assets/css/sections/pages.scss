@@ -1,0 +1,27 @@
+
+.gh-page {
+  padding: 0 4vw;
+
+  &-head {
+    margin: 0 auto;
+    padding: 8vmin 0 4vmin;
+    text-align: center;
+
+    > p {
+      max-width: 720px;
+      margin: .3em auto 0;
+      padding: 0 6vmin;
+      font-size: 1.3em;
+      line-height: 1.4em;
+      opacity: .5;
+
+      @media (max-width: 700px) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  &-image {
+    margin: 4vmin 0 0 0;    
+  }
+}

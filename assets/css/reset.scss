@@ -1,5 +1,6 @@
-/* Reset
-/* ---------------------------------------------------------- */
+
+@import "./colors.scss";
+@import "./fonts.scss";
 
 *,
 *::before,
@@ -11,24 +12,21 @@ html {
     overflow-x: hidden;
     overflow-y: scroll;
     font-size: 62.5%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    color: color(var(--color-base) l(+20%));
-    font-family: var(--font-sans-serif);
+    color: lighten($base-color, 20%);
+    font-family: $font-sans-serif;
     font-size: 1.5rem;
     line-height: 1.6em;
     font-weight: 400;
     font-style: normal;
-    background: #fff;
+    background: $bg-color;
     scroll-behavior: smooth;
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 p,
@@ -110,16 +108,13 @@ sup {
     line-height: 0;
     vertical-align: baseline;
 }
+
 sup {
     top: -0.5em;
 }
+
 sub {
     bottom: -0.25em;
-}
-
-a:not([class]) {
-    color: color(var(--color-primary) l(-5%));
-    text-decoration-skip-ink: auto;
 }
 
 a[class] {
@@ -132,58 +127,7 @@ a[class]:hover {
     transition: 0.2s ease;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0;
-    line-height: 1.15em;
-    font-weight: 700;
-}
-
-h1 {
-    font-size: 4.6rem;
-    letter-spacing: -0.5px;
-}
-@media (max-width: 500px) {
-    h1 {
-        font-size: 2.7rem;
-    }
-}
-
-h2 {
-    font-size: 3.6rem;
-}
-@media (max-width: 500px) {
-    h2 {
-        font-size: 2.2rem;
-    }
-}
-
-h3 {
-    font-size: 3.2rem;
-}
-@media (max-width: 500px) {
-    h3 {
-        font-size: 1.8rem;
-    }
-}
-
-h4 {
-    font-size: 2.6rem;
-}
-
-h5 {
-    font-size: 2.4rem;
-}
-
-h6 {
-    font-size: 2.2rem;
-}
-
-/* Remove all animations and transitions for people that prefer not to see them */
+// Remove all animations and transitions for people that prefer not to see them
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;

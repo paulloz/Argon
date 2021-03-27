@@ -1,0 +1,49 @@
+
+@import "colors.scss";
+@import "fonts.scss";
+
+@import "reset.scss";
+@import "grid-template.scss";
+@import "titles.scss";
+
+@import "sections/post-images.scss";
+
+html,
+.gh-viewport {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $bg-color;
+}
+
+@import "sections/header.scss";
+@import "sections/footer.scss";
+
+.gh {
+  &-main {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+  }
+
+  &-article {
+    padding: 8vmin 0;
+  }
+
+  &-postfeed {
+    padding: 8vmin 0;
+  }
+
+  &-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+@import "sections/meta.scss";
+@import "sections/home.scss";
+@import "sections/pages.scss";
+@import "sections/posts.scss";
+@import "sections/authors.scss";
+@import "sections/errors.scss";

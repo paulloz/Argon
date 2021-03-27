@@ -3,19 +3,16 @@ const {exec} = require('child_process');
 const {series, watch, src, dest, parallel} = require('gulp');
 const pump = require('pump');
 
-// gulp plugins and utils
 var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
 var zip = require('gulp-zip');
 var uglify = require('gulp-uglify');
 var beeper = require('beeper');
-
-// postcss plugins
+var filter = require('gulp-filter');
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var colorFunction = require('postcss-color-function');
-var cssnano = require('cssnano');
-var customProperties = require('postcss-custom-properties');
-var easyimport = require('postcss-easy-import');
+
+sass.compiler = require('node-sass');
 
 function serve(done) {
     livereload.listen();
@@ -47,17 +44,11 @@ function fonts(done) {
 }
 
 function css(done) {
-    var processors = [
-        easyimport,
-        customProperties({preserve: false}),
-        colorFunction(),
-        autoprefixer(),
-        cssnano()
-    ];
-
     pump([
-        src('assets/css/*.css', {sourcemaps: true}),
-        postcss(processors),
+        src('assets/css/*.scss', {sourcemaps: true}),
+        sass(),
+        postcss([autoprefixer()]),
+        filter(['assets/css/style.css']),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload()
     ], handleError(done));
@@ -101,7 +92,7 @@ exports.fonts = (done) => {
     if (dir) {
         exec(`git clone https://github.com/googlefonts/nunito.git ${dir}`, (error) => {
             if (error == null) {
-                const fonts = ['Bold', 'Regular', 'SemiBold'];
+                const fonts = ['Bold', 'Light', 'Regular', 'SemiBold'];
                 for (let font of fonts) {
                     fs.copyFileSync(`${dir}/fonts/TTF/Nunito-${font}.ttf`,
                                     `assets/fonts/Nunito-${font}.ttf`);

@@ -1,0 +1,75 @@
+
+@import "../colors.scss";
+@import "../fonts.scss";
+
+.gh-card {
+  &:not(:first-child) {
+    margin: 8vmin auto 0;
+  }
+
+  &-link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-title a {
+    color: $title-color;
+    text-decoration: none;
+
+    &:hover {
+      color: currentColor;
+      text-decoration: none;
+    }
+  }
+
+  &-image {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    &__image {
+      width: 100%;
+      object-fit: cover;
+      margin-bottom: 4vmin;
+    }
+
+    @media (max-width: 1030px) {
+      width: 100%;
+      max-width: 720px;
+    }
+  }
+
+  &-content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    p {
+      font-family: $font-serif;
+      font-weight: 400;
+      font-size: 1.9rem;
+      line-height: 1.6em;
+      margin: 1.6rem 0;
+
+      > strong {
+        display: inline-block;
+        padding: 1px 0;
+        font-weight: 600;
+      }
+    }
+
+    .readmore {
+      font-weight: 700;
+      font-size: 2rem;      
+
+      svg {
+        display: inline-block;
+        vertical-align: sub;
+        height: 1em;
+      }
+    }
+  }
+}

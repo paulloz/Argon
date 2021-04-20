@@ -1,10 +1,10 @@
 <span class="gh-{{ type }}-meta">
-    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMMM YYYY"}}</time>
     <span class="middot">&middot;</span>
-    {{reading_time minute="à peine une minute de lecture" minutes="% minutes de lecture"}}
+    {{reading_time minute="1min de lecture" minutes="%min de lecture"}}
     <span class="middot">&middot;</span>
     Par {{#foreach authors}}<a href="{{url}}">{{name}}</a>{{/foreach}}
 </span>
-<span class="gh-{{ type }}-meta">
+<span class="gh-{{ type }}-meta gh-{{ type }}-meta-tags">
     {{tags}}
 </span>

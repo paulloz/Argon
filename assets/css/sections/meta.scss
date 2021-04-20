@@ -11,6 +11,11 @@
     text-transform: uppercase;
     opacity: .5;
 
+    &-tags {
+      opacity: 1;
+      padding: 1rem 0;
+    }
+
     a {
       color: inherit;
       text-decoration: none;

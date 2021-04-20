@@ -14,6 +14,8 @@
     &-tags {
       opacity: 1;
       padding: 1rem 0;
+      color: $primary-color;
+      font-size: 1.6rem;
     }
 
     a {
@@ -23,6 +25,7 @@
 
       &:hover {
         box-shadow: inset 0 -2px 0 0 currentColor;
+        text-decoration: none;
       }
     }
   }

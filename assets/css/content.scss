@@ -54,6 +54,15 @@
         }
       }
     }
+
+    p a {
+      color: inherit;
+      text-decoration: underline;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
   }
 
   &-canvas {

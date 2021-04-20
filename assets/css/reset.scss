@@ -123,8 +123,10 @@ a[class] {
     transition: 0.4s ease;
 }
 
-a[class]:hover {
+
+a:hover {
     transition: 0.2s ease;
+    color: $primary-color !important;
 }
 
 // Remove all animations and transitions for people that prefer not to see them

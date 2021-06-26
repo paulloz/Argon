@@ -201,6 +201,9 @@ body:not(.gh-head-open) .gh-burger:hover {
           
           img {
             max-height: 40px;
+
+            position: relative;
+            left: -50px;
           }
         }
         
